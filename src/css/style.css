@@ -15,7 +15,7 @@ body {
 
 .header {
   display: flex;
-  width: 120rem;
+  width: 100rem;
   height: 8rem;
   margin: 0 auto;
   align-items: center; }
@@ -36,12 +36,15 @@ body {
 .section-form,
 .section-features,
 .section-cta {
-  max-width: 120rem;
+  max-width: 100rem;
   margin: 0 auto; }
 
 .section-hero {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); }
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 6rem;
+  padding: 4rem; }
 
 a:link {
   font-family: inherit;
@@ -49,7 +52,16 @@ a:link {
 
 button {
   font-family: inherit;
-  color: #fff; }
+  color: #fff;
+  font-size: inherit; }
+
+.heading-1 {
+  font-size: 4.8rem;
+  line-height: 1.2;
+  margin-bottom: 2rem; }
+
+.paragraph {
+  color: #9e9aa7; }
 
 .cta {
   margin-left: auto;
@@ -69,3 +81,9 @@ button {
   border-radius: 5rem; }
   .btn--cta:hover {
     background-color: rgba(42, 207, 207, 0.8); }
+
+.hero__img {
+  width: 100%; }
+
+.margin-bottom-medium {
+  margin-bottom: 2.4rem; }

@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  width: 120rem;
+  width: 100rem;
   height: 8rem;
   margin: 0 auto;
   align-items: center;
@@ -27,11 +27,14 @@
 .section-form,
 .section-features,
 .section-cta {
-  max-width: 120rem;
+  max-width: 100rem;
   margin: 0 auto;
 }
 
 .section-hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 6rem;
+  padding: 4rem;
 }
