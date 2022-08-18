@@ -1,0 +1,39 @@
+// - Cyan: hsl(180, 66%, 49%)
+// - Dark Violet: hsl(257, 27%, 26%)
+
+// ### Secondary
+
+// - Red: hsl(0, 87%, 67%)
+
+// ### Neutral
+
+// - Gray: hsl(0, 0%, 75%)
+// - Grayish Violet: hsl(257, 7%, 63%)
+// - Very Dark Blue: hsl(255, 11%, 22%)
+// - Very Dark Violet: hsl(260, 8%, 14%)
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+//  Variable declaration
+$primary-cyan: hsl(180, 66%, 49%);
+$primary-violet: hsl(257, 27%, 26%);
+$secondary-color: hsl(0, 87%, 67%);
+$gray: hsl(0, 0%, 75%);
+$gray-dark: hsl(257, 7%, 63%);
+$blue-dark: hsl(255, 11%, 22%);
+$violet-dark: hsl(260, 8%, 14%);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Poppins';
+  font-size: 1.8rem;
+}

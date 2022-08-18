@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Poppins';
+  font-size: 1.8rem; }
+
+.header {
+  display: flex;
+  width: 120rem;
+  height: 8rem;
+  margin: 0 auto;
+  align-items: center; }
+
+.nav {
+  margin-left: 10%; }
+  .nav__list {
+    display: flex;
+    gap: 2rem;
+    list-style: none; }
+  .nav__link:link, .nav__link:visited {
+    color: #9e9aa7;
+    text-decoration: none; }
+  .nav__link:hover, .nav__link:active {
+    color: #35323e; }
+
+.section-hero,
+.section-form,
+.section-features,
+.section-cta {
+  max-width: 120rem;
+  margin: 0 auto; }
+
+.section-hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+
+a:link {
+  font-family: inherit;
+  font-size: inherit; }
+
+button {
+  font-family: inherit;
+  color: #fff; }
+
+.cta {
+  margin-left: auto;
+  display: flex;
+  gap: 2rem; }
+
+.btn {
+  border: none;
+  padding: 0.8rem 2rem; }
+
+.btn--login {
+  background-color: inherit;
+  color: #9e9aa7; }
+
+.btn--cta {
+  background-color: #2acfcf;
+  border-radius: 5rem; }
+  .btn--cta:hover {
+    background-color: rgba(42, 207, 207, 0.8); }

@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  width: 120rem;
+  height: 8rem;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.nav {
+  margin-left: 10%;
+  &__list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  &__link:link,
+  &__link:visited {
+    color: $gray-dark;
+    text-decoration: none;
+  }
+  &__link:hover,
+  &__link:active {
+    color: $blue-dark;
+  }
+}
+.section-hero,
+.section-form,
+.section-features,
+.section-cta {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.section-hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

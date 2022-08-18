@@ -1,0 +1,24 @@
+.cta {
+  margin-left: auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.btn {
+  border: none;
+  padding: 0.8rem 2rem;
+}
+
+.btn {
+  &--login {
+    background-color: inherit;
+    color: $gray-dark;
+  }
+  &--cta {
+    background-color: $primary-cyan;
+    border-radius: 5rem;
+    &:hover {
+      background-color: rgba($primary-cyan, 0.8);
+    }
+  }
+}
