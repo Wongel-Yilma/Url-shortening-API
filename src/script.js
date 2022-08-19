@@ -6,14 +6,8 @@ const form = document.querySelector('.form');
 const btnForm = document.querySelector('.form__btn');
 const linkPreviewEl = document.querySelector('.link__previews');
 
-const timeout = function (s) {
-  return new Promise(function (_, reject) {
-    setTimeout(() => {
-      reject(new Error('The request took too long to respond.'));
-    }, s * 1000);
-  });
-};
-
+// Defining the URL Array
+const URLs = [];
 const createLinkPreview = function (inputURL, shortenedURL) {
   return `<div class="link__preview">
           <p class="link__input">
@@ -25,6 +19,32 @@ const createLinkPreview = function (inputURL, shortenedURL) {
           <button class="link__btn btn">Copy</button>
         </div>`;
 };
+
+// Checking if there is any Url saved before
+(function () {
+  const URLs = JSON.parse(localStorage.getItem('URLs'));
+  if (!URLs) return;
+  URLs.forEach(URL => {
+    const previewHTML= createLinkPreview(URL.inputURL,URL.shortenedURL);
+    linkPreviewEl.insertAdjacentHTML('afterbegin', previewHTML);
+  });
+})();
+
+
+const saveURLs = function (inputURL, shortenedURL) {
+  URLs.push({ inputURL, shortenedURL });
+  localStorage.setItem('URLs', JSON.stringify(URLs));
+};
+
+const timeout = function (s) {
+  return new Promise(function (_, reject) {
+    setTimeout(() => {
+      reject(new Error('The request took too long to respond.'));
+    }, s * 1000);
+  });
+};
+
+
 const getJSON = async function (inputURL) {
   try {
     // const res = await fetch(`${API_URL}${inputURL}`);
@@ -40,7 +60,6 @@ const getJSON = async function (inputURL) {
 };
 
 getJSON('https://github.com/Wongel-Yilma/Url-shortening-API');
-console.log('Getting in');
 
 //  Add event handler to the Input form
 
@@ -52,6 +71,7 @@ form.addEventListener('submit', function (e) {
     const shortenedURL = await getJSON('inputURL');
     const previewHTML = createLinkPreview(inputURL, shortenedURL);
     linkPreviewEl.insertAdjacentHTML('afterbegin', previewHTML);
+    saveURLs(inputURL, shortenedURL);
   })();
 });
 
@@ -64,4 +84,5 @@ linkPreviewEl.addEventListener('click', function (e) {
     .closest('.link__preview')
     .querySelector('.link__short').textContent;
   navigator.clipboard.writeText(copyText);
+  // JSON.stringify('copiedURL')
 });
