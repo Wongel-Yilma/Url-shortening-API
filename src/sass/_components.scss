@@ -29,14 +29,17 @@
 }
 
 .form {
+  grid-column: 1/-1;
   display: flex;
   align-items: center;
-  padding: 3rem 6rem;
+  padding: 4rem 6rem;
   gap: 2rem;
-    background-color: $primary-violet;
+  background-color: $primary-violet;
   width: 100%;
   background-image: url('../images/bg-shorten-desktop.svg');
   background-size: cover;
+   border-radius:1rem;
+
   &__input {
     width: 100%;
   }
@@ -62,4 +65,49 @@
       background-color: rgba($primary-cyan, 0.8);
     }
   }
+}
+
+.features {
+   display: grid;
+   position: relative;
+   grid-template-columns: repeat(3,1fr);
+   padding-top: 4rem;
+   column-gap: 4rem;
+   align-items: start;
+   &::after {
+      content: '';
+      height: 1rem;
+      width: 80%;
+      background-color:$primary-cyan;
+      z-index: -5;
+      position: absolute;
+      top:50%;
+      left:10%;
+   }
+   
+}
+.feature {
+   background-color: #fff;
+   padding:4rem;
+   border-radius:1rem;
+   position: relative;
+   &__two {
+      margin-top:6rem;
+   }
+   &__three {
+      margin-top: 12rem;
+   }
+   &__icon-box {
+      position: absolute; 
+      top: 0;
+      left: 0;
+      height: 7rem;
+      width: 7rem;
+      transform: translate(50%,-50%);
+      border-radius: 50%;
+      background-color:$primary-violet;
+      display:flex;
+      align-items:center;
+      justify-content: center;
+   }
 }

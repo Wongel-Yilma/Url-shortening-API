@@ -25,8 +25,7 @@
 }
 .header,
 .section-hero,
-.section-form,
-.section-features,
+.features,
 .section-cta {
   max-width: 120rem;
   margin: 0 auto;
@@ -38,3 +37,15 @@
   align-items: center;
   gap: 6rem;
 }
+
+.section-features {
+  margin-top: -10rem;
+  padding-top: 12rem;
+  padding-bottom: 10rem;
+  display: flex;
+  align-items:center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: rgba($gray-dark,0.25);
+}
+

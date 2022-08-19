@@ -32,8 +32,7 @@ body {
 
 .header,
 .section-hero,
-.section-form,
-.section-features,
+.features,
 .section-cta {
   max-width: 120rem;
   margin: 0 auto;
@@ -45,6 +44,16 @@ body {
   align-items: center;
   gap: 6rem; }
 
+.section-features {
+  margin-top: -10rem;
+  padding-top: 12rem;
+  padding-bottom: 10rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: rgba(158, 154, 167, 0.25); }
+
 a:link {
   font-family: inherit;
   font-size: inherit; }
@@ -55,12 +64,19 @@ button {
   font-size: inherit; }
 
 .heading-1 {
-  font-size: 4.8rem;
+  font-size: 6.4rem;
   line-height: 1.2;
   margin-bottom: 2rem; }
 
 .paragraph {
   color: #9e9aa7; }
+
+.heading-2 {
+  font-size: 4rem; }
+
+.heading-3 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem; }
 
 .cta {
   margin-left: auto;
@@ -85,14 +101,16 @@ button {
   width: 100%; }
 
 .form {
+  grid-column: 1/-1;
   display: flex;
   align-items: center;
-  padding: 3rem 6rem;
+  padding: 4rem 6rem;
   gap: 2rem;
   background-color: #3b3054;
   width: 100%;
   background-image: url("../images/bg-shorten-desktop.svg");
-  background-size: cover; }
+  background-size: cover;
+  border-radius: 1rem; }
   .form__input {
     width: 100%; }
   .form input {
@@ -113,5 +131,47 @@ button {
     .form__btn:hover {
       background-color: rgba(42, 207, 207, 0.8); }
 
+.features {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 4rem;
+  column-gap: 4rem;
+  align-items: start; }
+  .features::after {
+    content: '';
+    height: 1rem;
+    width: 80%;
+    background-color: #2acfcf;
+    z-index: -5;
+    position: absolute;
+    top: 50%;
+    left: 10%; }
+
+.feature {
+  background-color: #fff;
+  padding: 4rem;
+  border-radius: 1rem;
+  position: relative; }
+  .feature__two {
+    margin-top: 6rem; }
+  .feature__three {
+    margin-top: 12rem; }
+  .feature__icon-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 7rem;
+    width: 7rem;
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+    background-color: #3b3054;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
 .margin-bottom-medium {
   margin-bottom: 2.4rem; }
+
+.mid-width {
+  max-width: 45rem; }
