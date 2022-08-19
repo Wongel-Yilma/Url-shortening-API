@@ -111,3 +111,22 @@
       justify-content: center;
    }
 }
+
+.cta {
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction:column;
+   padding:4rem;
+   gap: 1rem;
+   width:60rem;
+   margin:0 auto;
+
+   &__btn {
+      background-color : $primary-cyan;
+      border-radius: 10rem;
+      &:hover{
+         background-color: rgba($primary-cyan, 0.8);
+      }
+   }
+}

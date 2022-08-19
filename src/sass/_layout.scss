@@ -25,8 +25,8 @@
 }
 .header,
 .section-hero,
-.features,
-.section-cta {
+.features
+ {
   max-width: 120rem;
   margin: 0 auto;
   padding: 4rem;
@@ -49,3 +49,8 @@
   background-color: rgba($gray-dark,0.25);
 }
 
+.section-cta {
+   height:22rem;
+   background-color : $primary-violet;
+   background-image: url('../images/bg-boost-desktop.svg');
+}

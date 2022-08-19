@@ -32,8 +32,7 @@ body {
 
 .header,
 .section-hero,
-.features,
-.section-cta {
+.features {
   max-width: 120rem;
   margin: 0 auto;
   padding: 4rem; }
@@ -53,6 +52,11 @@ body {
   flex-direction: column;
   gap: 2rem;
   background-color: rgba(158, 154, 167, 0.25); }
+
+.section-cta {
+  height: 22rem;
+  background-color: #3b3054;
+  background-image: url("../images/bg-boost-desktop.svg"); }
 
 a:link {
   font-family: inherit;
@@ -76,6 +80,11 @@ button {
 
 .heading-3 {
   font-size: 2.4rem;
+  margin-bottom: 2rem; }
+
+.heading-4 {
+  font-size: 4rem;
+  color: #fff;
   margin-bottom: 2rem; }
 
 .cta {
@@ -169,6 +178,21 @@ button {
     display: flex;
     align-items: center;
     justify-content: center; }
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4rem;
+  gap: 1rem;
+  width: 60rem;
+  margin: 0 auto; }
+  .cta__btn {
+    background-color: #2acfcf;
+    border-radius: 10rem; }
+    .cta__btn:hover {
+      background-color: rgba(42, 207, 207, 0.8); }
 
 .margin-bottom-medium {
   margin-bottom: 2.4rem; }
