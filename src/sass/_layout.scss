@@ -1,8 +1,8 @@
 .header {
   display: flex;
-  width: 100rem;
+
   height: 8rem;
-  margin: 0 auto;
+
   align-items: center;
 }
 
@@ -23,18 +23,18 @@
     color: $blue-dark;
   }
 }
+.header,
 .section-hero,
 .section-form,
 .section-features,
 .section-cta {
-  max-width: 100rem;
+  max-width: 120rem;
   margin: 0 auto;
+  padding: 4rem;
 }
-
 .section-hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 6rem;
-  padding: 4rem;
 }
