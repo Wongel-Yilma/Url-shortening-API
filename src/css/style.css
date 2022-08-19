@@ -33,6 +33,7 @@ body {
 .header,
 .section-hero,
 .features,
+.link__previews,
 .footer {
   max-width: 120rem;
   margin: 0 auto;
@@ -69,7 +70,8 @@ a:link {
 button {
   font-family: inherit;
   color: #fff;
-  font-size: inherit; }
+  font-size: inherit;
+  cursor: pointer; }
 
 .heading-1 {
   font-size: 6.4rem;
@@ -198,7 +200,8 @@ button {
   margin: 0 auto; }
   .cta__btn {
     background-color: #2acfcf;
-    border-radius: 10rem; }
+    border-radius: 10rem;
+    transition: all 0.3s; }
     .cta__btn:hover {
       background-color: rgba(42, 207, 207, 0.8); }
 
@@ -226,6 +229,37 @@ button {
     gap: 1rem; }
   .footer__logo path {
     fill: #fff; }
+
+.link__previews {
+  padding: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  min-width: 110rem; }
+
+.link__preview {
+  padding: 3rem 5rem;
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  width: 100%;
+  gap: 2rem; }
+
+.link__input {
+  margin-right: auto;
+  color: #35323e; }
+
+.link__short {
+  color: #2acfcf; }
+
+.link__btn {
+  padding: 0.8rem 1.6rem;
+  background-color: #2acfcf;
+  border-radius: 4px;
+  transition: all 0.3s; }
+  .link__btn:hover {
+    background-color: rgba(42, 207, 207, 0.8); }
 
 .margin-bottom-medium {
   margin-bottom: 2.4rem; }

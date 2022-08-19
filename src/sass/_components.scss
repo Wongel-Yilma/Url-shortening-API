@@ -125,6 +125,7 @@
    &__btn {
       background-color : $primary-cyan;
       border-radius: 10rem;
+      transition: all 0.3s;
       &:hover{
          background-color: rgba($primary-cyan, 0.8);
       }
@@ -162,5 +163,42 @@
    }
    &__logo path {
       fill:#fff;
+   }
+}
+
+// Link Previews
+.link {
+   &__previews {
+   padding: 0;
+   background-color: #fff;
+   border-radius: 5px;
+   display: flex;
+   flex-direction: column;
+   min-width: 110rem;
+   }
+   &__preview {
+   padding:3rem 5rem;
+   display: flex;
+   align-items: center;
+   height: 5rem;
+   width: 100%;
+   gap: 2rem;
+   }
+   &__input {
+      margin-right: auto;
+      color: $blue-dark;
+   }
+   &__short {
+      color:$primary-cyan;
+   }
+   &__btn {
+      padding: 0.8rem 1.6rem;
+      background-color: $primary-cyan;
+      border-radius: 4px;
+      transition: all 0.3s;
+      &:hover{
+         background-color: rgba($primary-cyan, 0.8);
+
+      }      
    }
 }
