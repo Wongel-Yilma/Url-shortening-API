@@ -5,8 +5,10 @@ const inputURLEl = document.querySelector('.form__input-value');
 const form = document.querySelector('.form');
 const btnForm = document.querySelector('.form__btn');
 const linkPreviewEl = document.querySelector('.link__previews');
+const emptyErrorMsg = document.querySelector('.empty-msg');
 
 // Defining the URL Array
+emptyErrorMsg.style.display = 'none';
 const URLs = [];
 const createLinkPreview = function (inputURL, shortenedURL) {
   return `<div class="link__preview">
@@ -25,11 +27,10 @@ const createLinkPreview = function (inputURL, shortenedURL) {
   const URLs = JSON.parse(localStorage.getItem('URLs'));
   if (!URLs) return;
   URLs.forEach(URL => {
-    const previewHTML= createLinkPreview(URL.inputURL,URL.shortenedURL);
+    const previewHTML = createLinkPreview(URL.inputURL, URL.shortenedURL);
     linkPreviewEl.insertAdjacentHTML('afterbegin', previewHTML);
   });
 })();
-
 
 const saveURLs = function (inputURL, shortenedURL) {
   URLs.push({ inputURL, shortenedURL });
@@ -43,7 +44,6 @@ const timeout = function (s) {
     }, s * 1000);
   });
 };
-
 
 const getJSON = async function (inputURL) {
   try {
@@ -67,6 +67,11 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
   const inputURL = inputURLEl.value;
   console.log(inputURL);
+  if (!inputURL) {
+    emptyErrorMsg.style.display = 'block';
+    return;
+  }
+  emptyErrorMsg.style.display = 'none';
   (async function () {
     const shortenedURL = await getJSON('inputURL');
     const previewHTML = createLinkPreview(inputURL, shortenedURL);

@@ -130,7 +130,8 @@ button {
   background-size: cover;
   border-radius: 1rem; }
   .form__input {
-    width: 100%; }
+    width: 100%;
+    position: relative; }
   .form input {
     border: none;
     width: 100%;
@@ -148,6 +149,11 @@ button {
     border-radius: 1rem; }
     .form__btn:hover {
       background-color: rgba(42, 207, 207, 0.8); }
+
+.empty-msg {
+  margin-top: 1rem;
+  color: #f46262;
+  font-style: italic; }
 
 .features {
   display: grid;
@@ -238,20 +244,21 @@ button {
 
 .link__previews {
   padding: 0;
-  background-color: #fff;
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 100%; }
+  width: 100%;
+  gap: 2rem; }
 
 .link__preview {
   padding: 3rem 5rem;
+  background-color: #fff;
   display: flex;
   align-items: center;
   height: 5rem;
   width: 100%;
-  gap: 2rem; }
+  gap: 2rem;
+  border-radius: 5px; }
 
 .link__input {
   margin-right: auto;
