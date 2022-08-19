@@ -167,14 +167,24 @@
 }
 
 // Link Previews
+.links {
+   padding: 4rem;
+   margin: 0 auto;
+   max-width: 120rem;
+   display:grid;
+   grid-template-columns: minmax(auto,120rem);
+}
 .link {
+
    &__previews {
-   padding: 0;
+
+   padding: 0 ;
    background-color: #fff;
    border-radius: 5px;
    display: flex;
    flex-direction: column;
-   min-width: 110rem;
+   margin: 0 auto;
+   width: 100%;
    }
    &__preview {
    padding:3rem 5rem;
