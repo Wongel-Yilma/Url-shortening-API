@@ -1,4 +1,4 @@
-.cta {
+.header__cta {
   margin-left: auto;
   display: flex;
   gap: 2rem;
@@ -128,5 +128,39 @@
       &:hover{
          background-color: rgba($primary-cyan, 0.8);
       }
+   }
+}
+.footer {
+   display: grid;
+   padding-top: 8rem;
+   grid-template-columns: 1fr 2fr 1fr ;
+  
+   &__columns {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+   }
+   &__list {
+      list-style: none;
+   }
+   &__link:link,&__link:visited   {
+      text-decoration:none;
+      color:$gray-dark;
+   }
+   &__icon {
+      color:#fff;
+      font-size: 2.8rem;
+      &:hover {
+         color: $primary-cyan;
+      }
+   }
+   &__link:hover, &__link:active {
+      color: $primary-cyan;
+   }
+   &__icon-box {
+      display:flex;
+      gap:1rem
+   }
+   &__logo path {
+      fill:#fff;
    }
 }

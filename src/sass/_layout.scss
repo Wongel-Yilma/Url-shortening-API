@@ -25,7 +25,8 @@
 }
 .header,
 .section-hero,
-.features
+.features,
+.footer
  {
   max-width: 120rem;
   margin: 0 auto;
@@ -53,4 +54,7 @@
    height:22rem;
    background-color : $primary-violet;
    background-image: url('../images/bg-boost-desktop.svg');
+}
+.footer-section {
+   background-color:$primary-violet;
 }

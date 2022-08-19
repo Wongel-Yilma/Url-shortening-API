@@ -32,7 +32,8 @@ body {
 
 .header,
 .section-hero,
-.features {
+.features,
+.footer {
   max-width: 120rem;
   margin: 0 auto;
   padding: 4rem; }
@@ -57,6 +58,9 @@ body {
   height: 22rem;
   background-color: #3b3054;
   background-image: url("../images/bg-boost-desktop.svg"); }
+
+.footer-section {
+  background-color: #3b3054; }
 
 a:link {
   font-family: inherit;
@@ -87,7 +91,11 @@ button {
   color: #fff;
   margin-bottom: 2rem; }
 
-.cta {
+.heading-5 {
+  color: #fff;
+  font-size: 2rem; }
+
+.header__cta {
   margin-left: auto;
   display: flex;
   gap: 2rem; }
@@ -193,6 +201,31 @@ button {
     border-radius: 10rem; }
     .cta__btn:hover {
       background-color: rgba(42, 207, 207, 0.8); }
+
+.footer {
+  display: grid;
+  padding-top: 8rem;
+  grid-template-columns: 1fr 2fr 1fr; }
+  .footer__columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); }
+  .footer__list {
+    list-style: none; }
+  .footer__link:link, .footer__link:visited {
+    text-decoration: none;
+    color: #9e9aa7; }
+  .footer__icon {
+    color: #fff;
+    font-size: 2.8rem; }
+    .footer__icon:hover {
+      color: #2acfcf; }
+  .footer__link:hover, .footer__link:active {
+    color: #2acfcf; }
+  .footer__icon-box {
+    display: flex;
+    gap: 1rem; }
+  .footer__logo path {
+    fill: #fff; }
 
 .margin-bottom-medium {
   margin-bottom: 2.4rem; }
