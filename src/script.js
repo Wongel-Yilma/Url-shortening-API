@@ -6,23 +6,27 @@ const form = document.querySelector('.form');
 const btnForm = document.querySelector('.form__btn');
 const linkPreviewEl = document.querySelector('.link__previews');
 const emptyErrorMsg = document.querySelector('.empty-msg');
+const btnMobileNav = document.querySelector('.btn-mobile-nav');
+const headerEl = document.querySelector('.header');
+emptyErrorMsg.style.display = 'none';
 
 // Defining the URL Array
-emptyErrorMsg.style.display = 'none';
 const URLs = [];
+// Rendering the Link Preview List Item
 const createLinkPreview = function (inputURL, shortenedURL) {
+  const shortened = `https://${shortenedURL}`;
   return `<div class="link__preview">
           <p class="link__input">
-            ${inputURLEl}
+            ${inputURL}
           </p>
            <p class="link__short">
-           ${shortenedURL}
+           <a>${shortened}</a>
           </p>
           <button class="link__btn btn">Copy</button>
         </div>`;
 };
 
-// Checking if there is any Url saved before
+// Checking if there is any Url saved before on start up and rendering them
 (function () {
   const URLs = JSON.parse(localStorage.getItem('URLs'));
   if (!URLs) return;
@@ -32,11 +36,13 @@ const createLinkPreview = function (inputURL, shortenedURL) {
   });
 })();
 
+// To upload the data on localstorage
 const saveURLs = function (inputURL, shortenedURL) {
   URLs.push({ inputURL, shortenedURL });
   localStorage.setItem('URLs', JSON.stringify(URLs));
 };
 
+// Creating timeout Promise
 const timeout = function (s) {
   return new Promise(function (_, reject) {
     setTimeout(() => {
@@ -47,33 +53,28 @@ const timeout = function (s) {
 
 const getJSON = async function (inputURL) {
   try {
-    // const res = await fetch(`${API_URL}${inputURL}`);
     const fetchData = fetch(`${API_URL}${inputURL}`);
-    const res = await Promise.race([fetchData, timeout(20)]);
+    const res = await Promise.race([fetchData, timeout(5)]);
     console.log(res);
+    // if (res.ok === false) throw new Error('Invalid URL ');
     const data = await res.json();
-    console.log(data);
-    return data;
+    return data.result.short_link;
   } catch (err) {
     console.error(err);
   }
 };
 
-getJSON('https://github.com/Wongel-Yilma/Url-shortening-API');
-
-//  Add event handler to the Input form
-
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   const inputURL = inputURLEl.value;
-  console.log(inputURL);
   if (!inputURL) {
     emptyErrorMsg.style.display = 'block';
     return;
   }
   emptyErrorMsg.style.display = 'none';
   (async function () {
-    const shortenedURL = await getJSON('inputURL');
+    const shortenedURL = await getJSON(inputURL);
+    if (!shortenedURL) return;
     const previewHTML = createLinkPreview(inputURL, shortenedURL);
     linkPreviewEl.insertAdjacentHTML('afterbegin', previewHTML);
     saveURLs(inputURL, shortenedURL);
@@ -90,4 +91,9 @@ linkPreviewEl.addEventListener('click', function (e) {
     .querySelector('.link__short').textContent;
   navigator.clipboard.writeText(copyText);
   // JSON.stringify('copiedURL')
+});
+
+// Toggle the mobile navigation sidebar
+btnMobileNav.addEventListener('click', function (e) {
+  headerEl.classList.toggle('nav-open');
 });

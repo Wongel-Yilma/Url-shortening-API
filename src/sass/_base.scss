@@ -32,8 +32,80 @@ $violet-dark: hsl(260, 8%, 14%);
 
 html {
   font-size: 62.5%;
+   @include respond(tab-land) {
+      font-size: 60%;
+  }
+ @include respond(tab-port) {
+     font-size:50%;
+  }
+  @include respond(phone) {
+     font-size:45%;
+  }
 }
 body {
   font-family: 'Poppins';
   font-size: 1.8rem;
+
+  @include respond(tab-port){
+    
+
+ .btn-mobile-nav {
+    border: none;
+    display: block;
+    background-color: var(--white-color);
+    z-index: 100;
+    position: absolute;
+    top: 3.8rem;
+    right: 5rem;
+  }
+  .nav {
+    margin: 0;
+    padding: 5rem 0;
+    position: absolute;
+    background-color: ($primary-violet);
+    width: 70%;
+    align-items: center;
+    top: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    z-index: 40;
+    flex-direction: column;
+    display: none;
+  }
+  .nav__list {
+    // margin: 10rem auto auto 5rem;
+    flex-direction: column;
+    gap: 3rem;
+    font-size: 2rem;
+  }
+  .nav__link {
+    line-height: 5rem;
+    font-weight: 700;
+    color:#fff
+  }
+  .nav-open .nav {
+    display: flex;
+    pointer-events: auto;
+    visibility: visible;
+  }
+  .btn-close-nav {
+    display: none;
+  }
+  .btn-open-nav {
+    display: block;
+  }
+  .nav-open .btn-close-nav {
+    display: block;
+  }
+  .nav-open .btn-open-nav {
+    display: none;
+  }
+  }
+}
+
+
+// Mobile Navigation
+.btn-mobile-nav {
+  display: none;
 }
